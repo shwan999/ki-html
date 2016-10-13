@@ -108,22 +108,7 @@ var labelArray = [getQueryVariable("label")],
         numPosts: 4,
         summaryLength: 0,
         widgetStyle: 3,
-        callBack: function() {
-            var $container = $('#' + this.containerId + ' > ul'),
-                $list = $container.find('li'),
-                innerHeight = $list.first().height(),
-                outerHeight = $list.first().outerHeight(true);
-            // Container & list height setup
-            $container.css({
-                "height": outerHeight * $list.length / 2,
-                "overflow": "hidden"
-            });
-            $list.css({
-                "height": innerHeight,
-                "overflow": "hidden"
-            });
-            
-        }
+        callBack: function() {}
     };
 </script>
 
