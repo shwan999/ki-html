@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Related Posts</title>
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
+<style>
+body {
+  background-color:white;
+  margin:0;
+  padding:0;
+  color:#212121;
+  font-family: Roboto, Arial, sans-serif;
+  font-size:15px;
+}
+a {
+  color:#212121;
+  text-decoration:none;
+}
+a:hover {color:#0379C4}
+
+.related-post {
+  margin: 2em auto 0;
+}
+.related-post h4 {
+  font-weight:700;
+  margin: 0 0 .5em;
+}
+}
+</style>
+</head>
+<body>
+
+<div id="related-post" class="related-post"></div>
+<script>
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){return pair[1];}
+  }
+  return(false);
+}
+var labelArray = [getQueryVariable("label")],
+    relatedPostConfig = {
+	homePage: getQueryVariable("url"),	
+        numPosts: 6,
+        summaryLength: 0,
+        widgetStyle: 1,
+        callBack: function() {}
+    };
+</script>
+
+<script>
+/*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
+var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Baca juga artikel menarik lainnya:</h4>",widgetStyle:1,homePage:"https://www.droidpluss.net/",numPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:200,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVMAAACtCAMAAAA6emybAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAxhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDM0MiwgMjAxMC8wMS8xMC0xODowNjo0MyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RDFBNjg0Njk3MUUxMUU2QkE1MERDOUVFMUU2MzVDMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RDFBNjg0Nzk3MUUxMUU2QkE1MERDOUVFMUU2MzVDMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhEMUE2ODQ0OTcxRTExRTZCQTUwREM5RUUxRTYzNUMwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhEMUE2ODQ1OTcxRTExRTZCQTUwREM5RUUxRTYzNUMwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+eAg7WAAAAaRQTFRFJ1l6UXuUT3qTU32VJlh5OmiFUHqTTXiRJFZ4JVh5UnuUKlt8OWiEL19/UnyVU3yVJVd5TXiSJlh6UnyUJll6THeRLF19Ll9+THeQTniSS3aQKFp6KVp7JVd4U32WPGqHSnWPMmKAMmKBL2B/TnmSVH2WN2aDN2aEKFp7SXWPLV59PmuIQ3CLJ1l5O2mGNGOCQW6KJ1p6LV5+PGqGJ1h5LF59RnKNMWF/UHuUOWiFQG6JKFl6SHOOKlx8NWSCLl5+TniRSHSPSHSOOGeES3eQR3KONGOBJFd4NGSCPGuHQm+KOmmGPmyIUXuTP2yJPWuHM2OBMWGAQW+KIlV3SHONI1V3S3aRU3uUUn2VVHyVUXyVPWqHT3mSS3aPUnuVLFx9OmiERHGMQ2+LRXGMOGeDMGB/O2mHLF1+NGWDOWeFQ3CMMGCAQW2KQ2+KK119SXSOLFx8Qm+LM2OCUHqUMWKALl59NmWDO2qHN2WEJ1l7VX6XRnGNN2eDR3OOKVt7RXGNK1x8UHuTKVt8SnaPQW6JNWWDTXeRRXKMKlt7RXCMPmyJTHiRpV9NowAAA/VJREFUeNrs3ed3m1YYgHFhbpSA7QtmaNiS997ZO272nh0ZnRlt9ujM6G4z2uSfjlFkGcUGX1F0jnv8PN/lD7/zwr1wAGcyRERERERERERERERERERERERERERERERERETUaMWW5lVYo6ZZrXl9sEZNW5pouh5TTP8Hph2YMqeYrnpTS08viel8ZnaibV1atc1amAamc0dFWpVv6JgGpu1Gan9StOms+80yZU4xxRRTTDHFFFNMMU3J1DNs2xCYpmfqOeOPX5/p+W6jg2lKpmL0ZNGV0tXubBWYpmPaNTHvGaS/ehSPKjBVMzUO1u4qD52NXbq29P3GPRQVU+/pgcsLprKwKWZQy+3FdQJTBVO7vcOqDar7U7SpmJp9tqeEqYrpvtNuzVQfiTEddi99dt7mfKpgen4wZPok0tTJd0qtexdrlMr5tDS2eOwPDkSZiq5JqWlWZ05guvK6Lz6tmQ499yJ+5205+GflhPsCUwVTb+/1oXco3YcG7Ijf2eOfVOTlR7sxVbmO+nLS1KWU+ufbI0+mrSeqcNl+wbqvcL0vNh65tm3/v9Ohc6Wov/QXI7Ut7BmbOVUwzTjzmF0ZEZrAmSN1bAP+wsMmcskqhanS/VOR71jfNxVa8y/UljHzyjcOpglMMydkd2dfbR6Nr0xzcQv7e0lg2rCpfS54Sq2zrzqQxo+9Mvz83g8Gpo2aitJhWTlznvO8ypF/3wqTyl0Opg2b9rwbS90/FpgawzvM+ueh8wLTxkyNgWL1ULf8Y05G5Hqt+md35e0ypgqmi/tR76+rX9T0/Bmxe9Z973loq7cVUwXTfV8vbOXFcIhPL2yfWfKMuWzptzFd0XTvYO+4Xd2avgwv8tb+v90lqEP3BKYrmdo90jpQuT7yMqfMOkS5lFS7+Ca8SmG67PV+riA1/dfc/KTa/d+bK79hYk073EOJNy1vDlSsPVvLmdI2qfDWjjw8ypzGmhrBmAZSY3l7Wqq9C3XLwDTO1Dle3YB2j40U1EzlBYFpjKmX9xfWIZk9rTam0t9kYBozp6dk4+9ByuMC00hTI+8nMLUe/iMwjZzTszLRG7t3DUwjTMWcbyUhld9OYRph6my2kr1ZPphzMF3e9IHvJjM1TwpMlzW1exKOqWYd+oNr02VNj/7sZpO1o1i948ecvn/styZvlGM/5l7ffwpTTDHFFNOUTdf6XurmhxvS6uNfmNPAVJvYmdr3pXZOSuaU76A1x5Tv9WGKKaaYrl5TvtPLnGKKKaaYYsq6jylziimmmGKKKes+pphiyvkUU0wxxRRTTDFNP/4Pb/rx/6KJiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiFZXbwUYAFkdcnret5fqAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail"in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/\/s[0-9]+(\-c)?/, "/s"+d.thumbnailSize):d.noImage;u=("summary"in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><a href="'+v+'" title="'+t+'"'+b+' target="_blank"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+' target="_blank"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+' target="_blank"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+" target='_blank'>"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
+</script>
+
+</body>
+</html>
