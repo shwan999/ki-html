@@ -1,0 +1,94 @@
+
+<!DOCTYPE html><!--[if IE 7]><html class="ie lt-ie9 lt-ie8 ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie lt-ie9 ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]--><head><title>Uberch.at - blog.kangismet.net</title><link rel="icon" type="image/png" href="https://uberch.at/images/logo-small.png"><link rel="stylesheet" href="https://uberch.at/stylesheets/main.css"><script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script><!--[if lte IE 8]>
+<script src="https://uberch.at/javascripts/libs/conditional/html5.min.js"></script>
+<script src="https://uberch.at/javascripts/libs/conditional/css3-mediaqueries.min.js"></script>
+<![endif]-->
+<!--[if lt IE 9]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script><![endif]-->
+<!--[if gte IE 9]><!--><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script><!--<![endif]--><script src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script><script src="https://uberch.at/javascripts/libs/libs.js"></script><meta property="fb:app_id" content="266006633513832"><meta property="og:title" content="Uberch.at - blog.kangismet.net"><meta property="og:image" content="https://uberch.at/images/logo-big.png"><meta property="og:url" content="https://uberch.at?href=http://blog.kangismet.net"><meta property="og:type" content="website"></head><body class="index"><div id="container" class="colorscheme-light locale-en"><div id="upperPart"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><div class="channel-info"><ins class="adsbygoogle"
+    style="display:inline-block;width:100%;height:62px"
+    data-ad-client="ca-pub-7703543854756421"
+    data-ad-slot="8521451237"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><span id="users-here"></span><div class="facepile clearfix"></div></div><div class="controls"><div class="textContainer"><textarea id="msg" maxlength="900"></textarea></div><div class="switches"><div title="Switch sound on/off" class="switch-sound"></div><div title="Enable/disable Chat as Page" class="switch-chat-as-page"><div class="switch-text">Chat as page</div></div><span class="switch-facebook-text">Publish to Facebook</span><div title="Enable/disable publishing to Facebook" class="switch-facebook"></div></div></div></div><div id="chatContainer"><div id="pinboard"></div><div id="msg_log"><div id="msg_loading"><img src="https://uberch.at/images/loading.gif"></div></div></div><div class="footer"><a href="https://uberch.at" target="_blank" class="logo"></a><iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fdiesocialisten&amp;locale=en_US&amp;send=false&amp;layout=button_count&amp;width=95&amp;height=21&amp;show_faces=false&amp;font=lucida+grande&amp;colorscheme=light&amp;action=like" scrolling="no" frameborder="0" allowTransparency="true" class="like"></iframe><a href="http://die.socialisten.at" target="_blank" class="poweredbydiesocialisten"></a></div><div class="fbLoginInfo"><div class="fbConnectButton"></div></div><a href="https://uberch.at/?href=http://blog.kangismet.net&amp;sound=on" target="_blank" title="Open chat in full screen mode" class="fullscreenLink"></a></div><script id="messageTemplate" type="text/x-jquery-tmpl"><div id="${id}" class="${msgClass} clearfix" data-mentioned-users="${mentionedUsers}" data-author-id="${user_id}" data-message-id="${msgId}">
+  {{if user_id}}
+    <a href="https://facebook.com/${user_id}" target="_blank" class="profile">
+      {{if customUserImage}}
+      <img src="${customUserImage}" title="${username}">
+      {{else}}
+      <img src="https://graph.facebook.com/v2.2/${user_id}/picture?height=100&width=100">
+      {{/if}}
+    </a>
+  {{else}}
+    <div class="profile">
+      <img src="https://uberch.at/images/profile-dummy.gif">
+    </div>
+  {{/if}}
+  
+  <div class="text">
+    <span>
+      {{if messageType === "server"}}
+      <strong>${username}</strong>:
+      {{else}}
+      <a href="https://facebook.com/profile.php?id=${user_id}" class="author" target="_blank">${username}</a>:
+      {{/if}}
+    </span>
+    
+    <span>
+      {{html msg}}
+    </span>
+  </div>
+  
+  {{if messageType !== "server"}}
+  <div class="label timestamp" data-timestamp="${timestamp}">just now</div>
+  <div class="ribbon"></div>
+  <div class="label actions">
+    <a href="#" data-action="pin-message">Pin message</a>
+    <a href="#" data-action="unpin-message">Unpin message</a>
+    <a href="#" data-action="delete-message">Delete message</a>
+    <a href="#" data-action="ban-user">Ban user</a>
+  </div>
+  {{/if}}
+</div>
+</script><script id="userListUser" type="text/x-jquery-tmpl">{{if user_id}}
+  <a id="user_${user_id}" class="profile" href="https://facebook.com/${user_id}" target="_blank">
+    {{if customUserImage}}
+    <img src="${customUserImage}" title="${username}">
+    {{else}}
+    <img src="https://graph.facebook.com/v2.2/${user_id}/picture?height=100&width=100" title="${username}">
+    {{/if}}
+  </a>
+{{/if}}
+</script><script id="disconnectMessage" type="text/x-jquery-tmpl"><div class="disconnectMessage">
+  The chat was opened in a new tab or window.
+  <a href="#" class="reloadLink">Click here to reload.</a>
+</div>
+</script><script id="suspensionMessage" type="text/x-jquery-tmpl"><div class="disconnectMessage">
+  <div>{{html message}}</div>
+</div>
+</script><script src="https://uberch.at/javascripts/main.min.js"></script><script>Uberchat.init({
+  domain: "uberch.at",
+  port: 443,
+  ssl: true,
+  fb_app_id: "266006633513832",
+  fb_namespace: "uberch-at",
+  href: "http://blog.kangismet.net",
+  channelId: "6fcd6e2a65e8e37e209b303fbfca196a",
+  fbPageImage: "",
+  muteOnInit: false,
+  turnFbPublishOff: false,
+  isMobile: false,
+  locale: "en"
+});</script><div id="fb-root"></div><script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-443751-34']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_setCampNameKey', 'uberchat']);_gaq.push(['_setCampContentKey', '6fcd6e2a65e8e37e209b303fbfca196a']);(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script></body>
