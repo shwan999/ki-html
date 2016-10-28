@@ -1,0 +1,180 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+<title>Contact Form</title>
+<link rel="canonical" href="https://cdn.rawgit.com/kangismet/ki-html/master/contact-form3.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Contact Form",
+        "datePublished": "2016-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,200,300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
+<style amp-custom>
+#contactForm input:focus ~ label,
+#contactForm textarea:focus ~ label,
+#contactForm input:valid ~ label,
+#contactForm textarea:valid ~ label {
+  font-size: 0.75em;
+  color: #8e44ad;
+  top: -2.25rem;
+  -webkit-transition: all 0.125s ease;
+  transition: all 0.125s ease;
+}
+
+#contactForm .styled-input {
+  float: left;
+  width: 33.3333%;
+  margin: 2rem 0 1rem;
+  padding: 0 10px 0 0;
+  position: relative;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#contactForm .styled-input-in {
+  position: relative;
+}
+
+#contactForm {
+  margin-right: -10px
+}
+
+#contactForm .styled-input label {
+  color: #999;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  line-height: 1;
+}
+
+#contactForm .styled-input.wide {
+  width: 100%;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 1rem 1rem;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 1rem;
+  background: #fafafa;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+#contactForm input ~ .span1,
+#contactForm textarea ~ .span1 {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #8e44ad;
+  position: absolute;
+  left: 50%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#contactForm input ~ .span2,
+#contactForm textarea ~ .span2 {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #8e44ad;
+  position: absolute;
+  right: 50%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#contactForm input ~ span {
+  bottom: 0;
+}
+
+#contactForm textarea ~ span {
+  bottom: 5px;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  outline: 0;
+}
+
+#contactForm input:focus ~ .span1,
+#contactForm textarea:focus ~ .span1,
+#contactForm input:focus ~ .span2,
+#contactForm textarea:focus ~ .span2 {
+  width: 50%;
+}
+
+#contactForm textarea {
+  width: 100%;
+  min-height: 15em;
+}
+
+#contactForm .btn {
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 0;
+  padding: 0 25px;
+  height: 51px;
+  line-height: 51px;
+  color: #333;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin: 20px 0 0;
+  background-image: none;
+}
+
+#contactForm .btn-default:hover,
+#contactForm .btn-default:focus {
+  background-color: #8e44ad;
+  border: 1px solid #0400bf;
+  color: white;
+}
+<body>
+ <form action-xhr="https://formspree.io/kangismet@gmail.com" method="POST" target="_blank" name="sentMessage" id="contactForm">
+    <div class="styled-input">
+      <div class="styled-input-in">
+      <input type="text" name="name" required="required" />
+      <label>Name</label>
+      <span class="span1"></span><span class="span2"></span> </div></div>
+    <div class="styled-input">
+      <div class="styled-input-in">
+      <input type="email" name="_replyto" required="required" />
+      <label>Email</label>
+      <span class="span1"></span><span class="span2"></span> </div></div>
+    <div class="styled-input">
+      <div class="styled-input-in">
+      <input type="text" name="_subject" required="required" />
+      <label>Subject</label>
+      <span class="span1"></span><span class="span2"></span> </div></div>
+    <div class="styled-input wide">
+      <div class="styled-input-in">
+      <textarea name="message" required="required"></textarea>
+      <label>Message</label>
+      <span class="span1"></span><span class="span2"></span> </div></div>
+    <button type="submit" class="btn btn-default">Send</button>
+  </form>
+</body>
+</html>
