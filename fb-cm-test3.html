@@ -18,7 +18,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-comments" data-href="'+ url +'" data-width="600" data-numposts="10"></div>
+
 <script>
 function getQueryVariable(variable) {
   var query = window.location.search.substring(1);
@@ -29,8 +29,10 @@ function getQueryVariable(variable) {
   }
   return(false);
 }
-var url = getQueryVariable("url");
+var url = getQueryVariable("fb-cm");
 </script>
-
+<script>
+<div class="fb-comments" data-href="'+ fb-cm +'" data-width="600" data-numposts="10"></div>
+</script>
 </body>
 </html>
